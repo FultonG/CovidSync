@@ -90,7 +90,7 @@ export default class Stats extends React.Component {
     return (
       <div id='statsContainer'>
         <div className='stats-title'>
-          <span class="badge badge-primary">Statistics</span>
+          <span>Statistics</span>
         </div>
         <div className='row'>
           <div className='col-6 text-center mb-4'>

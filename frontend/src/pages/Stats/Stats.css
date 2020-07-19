@@ -3,12 +3,16 @@
   margin: 5% 10%;
 }
 
+.charts {
+  margin: 50px 0 40px 0;
+}
 
 .stats-title {
   text-align: center;
   color: #444;
   margin: 40px 0 60px 0;;
   font-size: 4rem;
+  font-weight: 600;
 }
 
 .state-stats {
@@ -21,10 +25,11 @@
 
 #search {
   padding-left: 5px;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin-bottom: 10px;
 }
 
 table {
   font-size: 1.4rem;
+  z-index: 1;
 }
