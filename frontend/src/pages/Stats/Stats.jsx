@@ -2,14 +2,12 @@ import React from 'react';
 import * as _ from 'lodash';
 import { LineChart, BarChart, PieChart } from '../../components'
 import { baseRequest } from '../../utils';
-import * as testController from './testController';
-import './Test.css'
+import './Stats.css'
 
-export default class Test extends React.Component {
-  constructor() {
-    super();
+export default class Stats extends React.Component {
+  constructor(props) {
+    super(props);
     this.state = {
-      users: [],
       barData : [],
       lineData : []
     };
@@ -58,7 +56,6 @@ export default class Test extends React.Component {
   }
 
   async getLineData() {
-
     const getLineData = await baseRequest.get('/api/covid/usa-daily');
     const range = 14;
 
@@ -96,19 +93,11 @@ export default class Test extends React.Component {
   }
 
   async componentDidMount() {
-    const users = await testController.getUsers();
-    const filteredUsers = testController.filterUsers(users);
-
     this.getBarData();
     this.getLineData();
-
-    this.setState({
-      users: filteredUsers,
-    });
   }
 
   render() {
-    const { users } = this.state;
     const { barData } = this.state;
 
     const pieChartData = {

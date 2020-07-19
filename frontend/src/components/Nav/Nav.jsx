@@ -61,8 +61,8 @@ class Nav extends React.Component {
 
 const menu = [
   {
-    label: "Test",
-    link: "/test",
+    label: "Statistics",
+    link: "/stats",
   },
   {
     label: "Test2",
