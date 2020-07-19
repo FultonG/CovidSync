@@ -1,0 +1,24 @@
+.hidden {
+  display: none;
+}
+
+.expanding-card {
+  text-align: left;
+  padding: 15px 20px;
+  margin: 10px;
+}
+
+.text {
+  color: #888;
+  font-size: 1.25rem;
+  margin-bottom: 5px;
+}
+
+.subtext {
+  margin-top: 10px;
+  color: #333;
+}
+
+i {
+  color: rgba(3,91,149,1);
+}

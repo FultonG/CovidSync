@@ -1,0 +1,10 @@
+.faq-body {
+  text-align: center;
+  max-width: 50%;
+  margin-left: 25%;
+}
+
+.faq-title {
+  color: #444;
+  margin: 40px;
+}

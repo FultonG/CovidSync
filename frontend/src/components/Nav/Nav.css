@@ -1,0 +1,28 @@
+.navbar-brand {
+  font-size: 3rem;
+}
+
+.user-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #c9eaf6;
+}
+
+.user-letter {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+.navbar {
+  padding: 20px 10% 30px 5%;
+  background: rgb(3,91,149);
+  background: linear-gradient(90deg, rgba(3,91,149,1) 7%, rgba(77,213,254,1) 77%);
+}
+
+.nav-link {
+  color: #fff !important;
+}

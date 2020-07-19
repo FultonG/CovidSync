@@ -1,0 +1,8 @@
+# dependencies
+node_modules
+
+# misc
+.DS_Store
+
+.env
+PantherHacks-a147fd3832c0.json
