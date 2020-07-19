@@ -1,12 +1,11 @@
 import React from 'react';
-import Test from './Test';
+import Test from './Stats';
 import Test2 from './Test2';
 import Signup from './Signup';
 import Login from './Login';
 import JobList from './Jobs/JobList';
 import FAQ from './FAQ';
 import { Nav } from '../components'
-import { baseRequest } from '../utils';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import CreateJobs from './Jobs/CreateJob';
 
@@ -25,8 +24,6 @@ class App extends React.Component {
     if(user){
       this.setState(previous => ({...previous, user: JSON.parse(user)}));
     }
-    const response = await baseRequest.get('/api/covid/total');
-    const { data } = response;
   }
 
   setUser = (user) => {
@@ -45,7 +42,7 @@ class App extends React.Component {
       <Router>
         <Nav user={this.state.user} signOut={this.signOut}/>
         <Switch>
-          <Route path="/test">
+          <Route path="/stats">
             <Test />
           </Route>
           <Route path="/test2">
