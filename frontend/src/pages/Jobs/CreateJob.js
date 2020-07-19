@@ -4,7 +4,7 @@ import { Multiselect } from "multiselect-react-dropdown";
 import languages from "../../utils/languages.json";
 import cities from "../../utils/cities.json";
 import jobs from "../../utils/jobs";
-import {useHistory} from "react-router-dom";
+import {useHistory, Redirect} from "react-router-dom";
 
 const initialValues = {
   title: "",
@@ -29,7 +29,7 @@ const employmentTypes = [
   },
 ];
 
-const CreateJobs = () => {
+const CreateJobs = ({user}) => {
   const [values, setValues] = useState(initialValues);
   let history = useHistory();
   const handleInputChange = (value, attr) => {
@@ -37,12 +37,27 @@ const CreateJobs = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await jobs.createPost(values);
+    await jobs.createPost({...values, company: user.company, image: user.image});
     history.push('/jobs')
 
   };
   const preventSubmit = (e) => {
     e.preventDefault();
+  }
+
+  if(!user.isLoggedIn){
+    return <Redirect to="/login" />
+  }
+  
+  if(user.accountType !== 'Company'){
+    return (
+      <Form.FormContainer>
+        <Form.Form as="div">
+        <h3>Sorry! Only Company Accounts can post new listings</h3>
+        <Button onClick={() => history.push('/jobs')}>Back to Listings</Button>
+        </Form.Form>
+      </Form.FormContainer>
+    )
   }
   return (
     <Form.FormContainer>
