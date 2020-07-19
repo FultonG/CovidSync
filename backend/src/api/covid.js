@@ -43,9 +43,9 @@ router.get('/usa-daily', async (req, res) => {
   }
 });
 
-router.get('/state-info', async (req, res) => {
+router.get('/usa-states', async (req, res) => {
   try {
-    const { data } = await axios.get(`${v2BaseRequest}/states/info.json`);
+    const { data } = await axios.get(`${v2BaseRequest}/states/current.json`);
     return res.json(data);
   } catch (err) {
     return res.status(500).json({ message: err });

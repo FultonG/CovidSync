@@ -1,0 +1,37 @@
+
+#home-page-container {
+  margin: 5% 0;
+}
+
+.home-card {
+  font-family: Montserrat;
+  margin: 0 auto;
+  padding: 20px 0;
+  transition: .3s ease-out;
+  z-index: 1;
+}
+
+.home-card:hover {
+  transform: translateY(-10px);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-top: 10px 0;
+  font-weight: 600;
+  color: #393737;
+}
+
+.card-text {
+  font-weight: 500;
+}
+
+.home-icon {
+  font-size: 9rem;
+  color: #007FFF;
+}
+
+#vector {
+  position: fixed;
+  bottom: 0;
+}

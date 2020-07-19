@@ -1,5 +1,10 @@
-.navbar-brand {
-  font-size: 3rem;
+
+.fab  {
+  color: white !important;
+}
+
+h5 {
+  margin: 20px 0 !important;
 }
 
 .user-container {
@@ -10,19 +15,32 @@
   width: 50px;
   border-radius: 50%;
   background-color: #c9eaf6;
+  margin: 0 0 0 10px;
 }
 
 .user-letter {
-  margin: 0;
   font-size: 1.75rem;
   font-weight: 500;
 }
+
 .navbar {
-  padding: 20px 10% 30px 5%;
-  background: rgb(3,91,149);
-  background: linear-gradient(90deg, rgba(3,91,149,1) 7%, rgba(77,213,254,1) 77%);
+  padding: 80px;
+  background: rgb(36,146,218);
+  background: linear-gradient(90deg, rgba(36,146,218,1) 0%, rgba(77,213,254,1) 77%);
 }
 
 .nav-link {
+  font-family: Roboto;
   color: #fff !important;
+  font-size: 1.6rem;
+  font-weight: 300;
+  margin-right: 40px;
 }
+
+.brand {
+  font-size: 48px;
+}
+
+.nav-title {
+  font-family: Montserrat;
+};
