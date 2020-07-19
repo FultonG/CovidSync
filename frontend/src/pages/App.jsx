@@ -34,10 +34,16 @@ class App extends React.Component {
     this.setState(previous => ({...previous, user}))
   }
 
+  signOut = () => {
+    console.log('click')
+    localStorage.removeItem('user');
+    this.setState(previous => ({...previous, user: {isLoggedIn: false}}))
+  }
+
   render() {
     return (
       <Router>
-        <Nav user={this.state.user}/>
+        <Nav user={this.state.user} signOut={this.signOut}/>
         <Switch>
           <Route path="/test">
             <Test />

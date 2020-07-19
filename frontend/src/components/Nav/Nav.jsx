@@ -35,7 +35,7 @@ class Nav extends React.Component {
               </li>
             ))}
             {this.props.user.isLoggedIn ? (
-              <div className="user-container">
+              <div className="user-container" onClick={this.props.signOut}>
                 <span className="user-letter">
                   {this.props.user.username[0].toUpperCase()}
                 </span>

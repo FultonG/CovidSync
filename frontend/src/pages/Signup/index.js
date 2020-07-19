@@ -19,7 +19,7 @@ const accountTypes = [
 const InitialValues = {
   username: "",
   password: "",
-  company: "",
+  accountType: 'Personal'
 };
 
 const SignUp = ({ setUser }) => {
