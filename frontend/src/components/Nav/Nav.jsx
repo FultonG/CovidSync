@@ -1,10 +1,10 @@
 import React from "react";
 import "./Nav.css";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, history, useHistory } from "react-router-dom";
 import LanguageDropDown from '../LanguageDropDown';
 
-class Nav extends React.Component {
-  render() {
+const Nav = (props) => {
+  let history = useHistory();
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <Link className="navbar-brand" to="/">
@@ -37,10 +37,10 @@ class Nav extends React.Component {
                 </NavLink>
               </li>
             ))}
-            {this.props.user.isLoggedIn ? (
-              <div className="user-container" onClick={this.props.signOut}>
+            {props.user.isLoggedIn ? (
+              <div className="user-container" onClick={() => props.signOut(history)}>
                 <span className="user-letter">
-                  {this.props.user.username[0].toUpperCase()}
+                  {props.user.username[0].toUpperCase()}
                 </span>
               </div>
             ) : (
@@ -56,11 +56,10 @@ class Nav extends React.Component {
               </li>
             )}
           </ul>
-            <LanguageDropDown value={this.props.lang} onSelect={this.props.changeLanguage}/>
+            <LanguageDropDown value={props.lang} onSelect={props.changeLanguage}/>
         </div>
       </nav>
     );
-  }
 }
 
 const menu = [

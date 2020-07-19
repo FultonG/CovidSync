@@ -4,7 +4,7 @@ import { Multiselect } from "multiselect-react-dropdown";
 import languages from "../../utils/languages.json";
 import cities from "../../utils/cities.json";
 import jobs from "../../utils/jobs";
-import {useHistory, Redirect} from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 
 const initialValues = {
   title: "",
@@ -12,6 +12,7 @@ const initialValues = {
   employmentType: "",
   length: "",
   languages: [],
+  description: ""
 };
 
 const employmentTypes = [
@@ -29,7 +30,7 @@ const employmentTypes = [
   },
 ];
 
-const CreateJobs = ({user}) => {
+const CreateJobs = ({ user }) => {
   const [values, setValues] = useState(initialValues);
   let history = useHistory();
   const handleInputChange = (value, attr) => {
@@ -37,33 +38,40 @@ const CreateJobs = ({user}) => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await jobs.createPost({...values, company: user.company, image: user.image});
-    history.push('/jobs')
-
+    await jobs.createPost({
+      ...values,
+      company: user.company,
+      image: user.image,
+      postedBy: user.username
+    });
+    history.push("/jobs");
   };
   const preventSubmit = (e) => {
     e.preventDefault();
+  };
+
+  if (!user.isLoggedIn) {
+    return <Redirect to="/login" />;
   }
 
-  if(!user.isLoggedIn){
-    return <Redirect to="/login" />
-  }
-  
-  if(user.accountType !== 'Company'){
+  if (user.accountType !== "Company") {
     return (
       <Form.FormContainer>
         <Form.Form as="div">
-        <h3>Sorry! Only Company Accounts can post new listings</h3>
-        <Button onClick={() => history.push('/jobs')}>Back to Listings</Button>
+          <h3>Sorry! Only Company Accounts can post new listings</h3>
+          <Button onClick={() => history.push("/jobs")}>
+            Back to Listings
+          </Button>
         </Form.Form>
       </Form.FormContainer>
-    )
+    );
   }
   return (
     <Form.FormContainer>
       <Form.Form onSubmit={preventSubmit}>
         <h3>Create a new Job Post</h3>
         <Form.Input
+          value={values.title}
           placeholder="Job Title"
           onChange={(e) => handleInputChange(e.target.value, "title")}
           required
@@ -84,6 +92,13 @@ const CreateJobs = ({user}) => {
           placeholder="Location"
           singleSelect
           required
+        />
+        <Form.Input
+          as="textarea"
+          value={values.description}
+          style={{ resize: "none" }}
+          placeholder="Job Description"
+          onChange={(e) => handleInputChange(e.target.value, "description")}
         />
         <Form.Input
           placeholder="Employment Type"
@@ -126,7 +141,9 @@ const CreateJobs = ({user}) => {
           required
         />
         <Form.ButtonContainer>
-          <Button type="button" onClick={handleSubmit}>Create Post</Button>
+          <Button type="button" onClick={handleSubmit}>
+            Create Post
+          </Button>
         </Form.ButtonContainer>
       </Form.Form>
     </Form.FormContainer>

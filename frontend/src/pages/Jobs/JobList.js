@@ -15,6 +15,7 @@ const ListContainer = styled.div`
   width: 100%;
   flex-wrap: wrap;
 `;
+
 const Card = styled.div`
   display: flex;
   width: 70%;
@@ -89,37 +90,15 @@ const JobList = (props) => {
     name: "English",
     nativeName: "English",
   });
-  const fetchJobs = async () => {
+  const fetchJobs = async (lang) => {
     const postList = await jobs.getAllJobs();
-    setPosts(postList);
-    setResults(postList);
-  };
-  useEffect(() => {
-    fetchJobs();
-  }, []);
-
-  useEffect(() => {
-    setResults(
-      posts.filter((post) =>
-        post.title.toLowerCase().includes(search.toLowerCase())
-      )
-    );
-  }, [search]);
-
-  useEffect(() => {
-    setResults(
-      posts.filter((post) =>
-        post.languages.some((lang) => lodash.isEqual(lang, languageFilter))
-      )
-    );
-  }, [languageFilter]);
-
-  useEffect(() => {
-    if (props.lang?.code === "en") {
-      fetchJobs();
+    
+    if (lang.code === "en") {
+      setPosts(postList);
+      setResults(postList);
     } else {
       Promise.all(
-        posts.map(async (entry) => {
+        postList.map(async (entry) => {
           let result = await translate.trans([
             entry.length,
             entry.employmentType,
@@ -138,7 +117,28 @@ const JobList = (props) => {
         setPosts(data);
       });
     }
+    
+  };
+  useEffect(() => {
+    fetchJobs(props.lang);
   }, [props.lang]);
+
+  useEffect(() => {
+    setResults(
+      posts.filter((post) =>
+        post.title.toLowerCase().includes(search.toLowerCase())
+      )
+    );
+  }, [search]);
+
+  useEffect(() => {
+    setResults(
+      posts.filter((post) =>
+        post.languages.some((lang) => lodash.isEqual(lang, languageFilter))
+      )
+    );
+  }, [languageFilter]);
+
   return (
     <ListContainer>
       <ButtonContainer>
@@ -168,6 +168,7 @@ const JobList = (props) => {
             <h3>{job.title}</h3>
             <p>Location: {job.location}</p>
             <p>Company: {job.company}</p>
+            <Button onClick={() => history.push(`/jobs/${job.id}`)}>Apply</Button>
           </div>
           <InformationContainer>
             <h5>Gig information</h5>
