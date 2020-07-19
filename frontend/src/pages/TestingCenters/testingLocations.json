@@ -1,0 +1,1093 @@
+[
+  {
+    "id": "1",
+    "organization_id": "1",
+    "name": "Hillsborough: BayCare Urgent Care",
+    "alternate_name": "Baycare",
+    "description": "BayCare Health System is consolidating its drive-through COVID-19 testing sites to one high-volume location per county effective Monday.\n\nThe hours also are shifting to 9 a.m. to noon, officials said.\n\nAfter five days of testing, BayCare says it has screened more than 6,100 people over Hillsborough, Pinellas, Pasco and Polk counties and collected specimens from nearly 3,500.\n\nBayCare is asking that anyone who wants to be tested should be referred by a physician and have current symptoms (cough, fever, shortness of breath) in order to best utilize its limited test supplies. Test results are available in 5-7 days.",
+    "transportation": "Car",
+    "updated": "2020-03-31",
+    "featured": "TRUE",
+    "physical_address": [
+      {
+        "id": "1",
+        "location_id": "1",
+        "address_1": "3440 W. Dr. MLK Jr. Blvd., Suite 100",
+        "city": "Tampa",
+        "region": "NONE",
+        "state_province": "FL",
+        "postal_code": "33607",
+        "country": "US"
+      }
+    ],
+    "phones": [
+      {
+        "id": "1",
+        "location_id": "1",
+        "number": " +1 (813) 559-1888",
+        "extension": "None",
+        "type": "Office",
+        "language": "EN",
+        "description": "description"
+      }
+    ],
+    "regular_schedule": [
+      {
+        "id": "1",
+        "location_id": "1",
+        "weekday": "1",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "1",
+        "location_id": "1",
+        "weekday": "2",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "1",
+        "location_id": "1",
+        "weekday": "3",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "1",
+        "location_id": "1",
+        "weekday": "4",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "1",
+        "location_id": "1",
+        "weekday": "5",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "1",
+        "location_id": "1",
+        "weekday": "6",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "1",
+        "location_id": "1",
+        "weekday": "7",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "organization_id": "1",
+    "name": "Pinellas: BayCare Urgent Care (Carillon)",
+    "alternate_name": "Baycare",
+    "description": "BayCare Health System is consolidating its drive-through COVID-19 testing sites to one high-volume location per county effective Monday.\n\nThe hours also are shifting to 9 a.m. to noon, officials said.\n\nAfter five days of testing, BayCare says it has screened more than 6,100 people over Hillsborough, Pinellas, Pasco and Polk counties and collected specimens from nearly 3,500.\n\nBayCare is asking that anyone who wants to be tested should be referred by a physician and have current symptoms (cough, fever, shortness of breath) in order to best utilize its limited test supplies. Test results are available in 5-7 days.",
+    "transportation": "Car",
+    "updated": "2020-04-01",
+    "featured": "TRUE",
+    "physical_address": [
+      {
+        "id": "2",
+        "location_id": "2",
+        "address_1": "900 Carillon Parkway, Suite106",
+        "city": "St. Petersburg",
+        "region": "NONE",
+        "state_province": "FL",
+        "postal_code": "33716",
+        "country": "US"
+      }
+    ],
+    "phones": [
+      {
+        "id": "2",
+        "location_id": "2",
+        "number": " +1 (727) 561-2670",
+        "extension": "None",
+        "type": "Office",
+        "language": "EN",
+        "description": "Primary number pulled from Google Maps listing."
+      }
+    ],
+    "regular_schedule": [
+      {
+        "id": "2",
+        "location_id": "2",
+        "weekday": "1",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "2",
+        "location_id": "2",
+        "weekday": "2",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "2",
+        "location_id": "2",
+        "weekday": "3",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "2",
+        "location_id": "2",
+        "weekday": "4",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "2",
+        "location_id": "2",
+        "weekday": "5",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "2",
+        "location_id": "2",
+        "weekday": "6",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "2",
+        "location_id": "2",
+        "weekday": "7",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "organization_id": "1",
+    "name": "Pasco: BayCare Urgent Care (New Port Richey)",
+    "alternate_name": "Baycare",
+    "description": "BayCare Health System is consolidating its drive-through COVID-19 testing sites to one high-volume location per county effective Monday.\n\nThe hours also are shifting to 9 a.m. to noon, officials said.\n\nAfter five days of testing, BayCare says it has screened more than 6,100 people over Hillsborough, Pinellas, Pasco and Polk counties and collected specimens from nearly 3,500.\n\nBayCare is asking that anyone who wants to be tested should be referred by a physician and have current symptoms (cough, fever, shortness of breath) in order to best utilize its limited test supplies. Test results are available in 5-7 days.",
+    "transportation": "Car",
+    "updated": "2020-04-01",
+    "featured": "TRUE",
+    "physical_address": [
+      {
+        "id": "3",
+        "location_id": "3",
+        "address_1": "4821 U.S. Highway 19",
+        "city": "New Port Richey",
+        "region": "NONE",
+        "state_province": "FL",
+        "postal_code": "34652",
+        "country": "US"
+      }
+    ],
+    "phones": [
+      {
+        "id": "3",
+        "location_id": "3",
+        "number": " +1 (727) 807-7176",
+        "extension": "None",
+        "type": "Office",
+        "language": "EN",
+        "description": "Primary number pulled from Google Maps listing."
+      }
+    ],
+    "regular_schedule": [
+      {
+        "id": "3",
+        "location_id": "3",
+        "weekday": "1",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "3",
+        "location_id": "3",
+        "weekday": "2",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "3",
+        "location_id": "3",
+        "weekday": "3",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "3",
+        "location_id": "3",
+        "weekday": "4",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "3",
+        "location_id": "3",
+        "weekday": "5",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "3",
+        "location_id": "3",
+        "weekday": "6",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "3",
+        "location_id": "3",
+        "weekday": "7",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "organization_id": "1",
+    "name": "Polk: BayCare Urgent Care (Haines City)",
+    "alternate_name": "Baycare",
+    "description": "BayCare Health System is consolidating its drive-through COVID-19 testing sites to one high-volume location per county effective Monday.\n\nThe hours also are shifting to 9 a.m. to noon, officials said.\n\nAfter five days of testing, BayCare says it has screened more than 6,100 people over Hillsborough, Pinellas, Pasco and Polk counties and collected specimens from nearly 3,500.\n\nBayCare is asking that anyone who wants to be tested should be referred by a physician and have current symptoms (cough, fever, shortness of breath) in order to best utilize its limited test supplies. Test results are available in 5-7 days.",
+    "transportation": "Car",
+    "updated": "2020-04-01",
+    "featured": "FALSE",
+    "physical_address": [
+      {
+        "id": "4",
+        "location_id": "4",
+        "address_1": "36245 U.S. Highway 27",
+        "city": "Haines City",
+        "region": "NONE",
+        "state_province": "FL",
+        "postal_code": "33844",
+        "country": "US"
+      }
+    ],
+    "phones": [
+      {
+        "id": "4",
+        "location_id": "4",
+        "number": " +1 (863) 866-9933",
+        "extension": "None",
+        "type": "Office",
+        "language": "EN",
+        "description": "Primary number pulled from Google Maps listing."
+      }
+    ],
+    "regular_schedule": [
+      {
+        "id": "4",
+        "location_id": "4",
+        "weekday": "1",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "4",
+        "location_id": "4",
+        "weekday": "2",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "4",
+        "location_id": "4",
+        "weekday": "3",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "4",
+        "location_id": "4",
+        "weekday": "4",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "4",
+        "location_id": "4",
+        "weekday": "5",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "4",
+        "location_id": "4",
+        "weekday": "6",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      },
+      {
+        "id": "4",
+        "location_id": "4",
+        "weekday": "7",
+        "opens_at": "9:00 AM",
+        "closes_at": "12:00 PM"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "organization_id": "2",
+    "name": "University of Florida Health COVID-19 Testing Program in The Villages",
+    "alternate_name": "University of Florida Health COVID-19 Testing Program in The Villages",
+    "description": "The testing program includes 2 testing arms:\n\nThe first arm focuses on CLINICAL testing using FDA-approved tests under guidelines set out by the CDC.\n\nThe second arm focuses on voluntary RESEARCH testing and uses supplies and test kits provided by The University of Florida Infectious Disease Lab for which FDA approval is pending.\n\nTesting will be conducted at the Villages Polo Field and we ask participants to use the South Entrance. We also ask that participants utilize their golf cart, if available, when visiting the testing site.\n\nUnfortunately, test kits and supplies are limited due to resource issues at the state and national levels. As a result, we can only offer a limited number of testing appointments each day.\n\nAnswers to your questions below will help us determine which arm of testing you would be eligible for and will direct you to the appropriate scheduling page where you can sign up for a test appointment assuming testing supplies are available.\n\nPlease note that appointments for testing will be released 1 day in advance - with all test slots for the next day coming online each morning at 8 AM, so if testing slots are no longer available today, you will have an opportunity to sign up for a slot again tomorrow.\n\n***Test slots are allocated to those who sign up first.***",
+    "transportation": "Car",
+    "updated": "2020-04-07",
+    "featured": "FALSE",
+    "physical_address": [
+      {
+        "id": "5",
+        "location_id": "5",
+        "address_1": "703 N Buena Vista Blvd,",
+        "city": "The Villages",
+        "region": "NONE",
+        "state_province": "FL",
+        "postal_code": "32162",
+        "country": "US"
+      }
+    ],
+    "phones": [
+      {
+        "id": "5",
+        "location_id": "5",
+        "number": " +1 (352) 733-0111",
+        "extension": "None",
+        "type": "Office",
+        "language": "EN",
+        "description": "Primary number pulled from Google Maps listing."
+      }
+    ],
+    "regular_schedule": [
+      {
+        "id": "5",
+        "location_id": "5",
+        "weekday": "1",
+        "opens_at": "8:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "5",
+        "location_id": "5",
+        "weekday": "2",
+        "opens_at": "8:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "5",
+        "location_id": "5",
+        "weekday": "3",
+        "opens_at": "8:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "5",
+        "location_id": "5",
+        "weekday": "4",
+        "opens_at": "8:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "5",
+        "location_id": "5",
+        "weekday": "5",
+        "opens_at": "8:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "5",
+        "location_id": "5",
+        "weekday": "6",
+        "opens_at": "8:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "5",
+        "location_id": "5",
+        "weekday": "7",
+        "opens_at": "8:00 AM",
+        "closes_at": "5:00 PM"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "organization_id": "3",
+    "name": "Charles Hadley Park",
+    "alternate_name": "Charles Hadley Park",
+    "description": "The site, which has been open for the past three weeks, will also continue offering COVID-19 testing to city residents age 18 and over who are experiencing symptoms. Testing is by appointment only.",
+    "transportation": "Car",
+    "updated": "2020-04-21",
+    "featured": "FALSE",
+    "physical_address": [
+      {
+        "id": "6",
+        "location_id": "6",
+        "address_1": "1350 NW 50th Street.",
+        "city": "Miami",
+        "region": "NONE",
+        "state_province": "FL",
+        "postal_code": "33142",
+        "country": "US"
+      }
+    ],
+    "phones": [
+      {
+        "id": "6",
+        "location_id": "6",
+        "number": " +1 (305) 960-5050",
+        "extension": "None",
+        "type": "Appointment Line",
+        "language": "EN",
+        "description": "Primary number pulled from Google Maps listing."
+      }
+    ],
+    "regular_schedule": [
+      {
+        "id": "6",
+        "location_id": "6",
+        "weekday": "1",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "6",
+        "location_id": "6",
+        "weekday": "2",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "6",
+        "location_id": "6",
+        "weekday": "3",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "6",
+        "location_id": "6",
+        "weekday": "4",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "6",
+        "location_id": "6",
+        "weekday": "5",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "6",
+        "location_id": "6",
+        "weekday": "6",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "6",
+        "location_id": "6",
+        "weekday": "7",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "organization_id": "3",
+    "name": "Hard Rock Stadium",
+    "alternate_name": "Hard Rock Stadium",
+    "description": "Eligible: anyone displaying symptoms, anyone with an underlying health condition, anyone in contact with someone who tested positive",
+    "transportation": "Car",
+    "updated": "2020-04-22",
+    "featured": "FALSE",
+    "physical_address": [
+      {
+        "id": "7",
+        "location_id": "7",
+        "address_1": "347 Don Shula Drive",
+        "city": "Miami Gardens",
+        "region": "NONE",
+        "state_province": "FL",
+        "postal_code": "33056",
+        "country": "US"
+      }
+    ],
+    "phones": [
+      {
+        "id": "7",
+        "location_id": "7",
+        "number": " +1-866-779-6121",
+        "extension": "None",
+        "type": "Hotline",
+        "language": "EN",
+        "description": "Appointment Line"
+      }
+    ],
+    "regular_schedule": [
+      {
+        "id": "7",
+        "location_id": "7",
+        "weekday": "1",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "7",
+        "location_id": "7",
+        "weekday": "2",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "7",
+        "location_id": "7",
+        "weekday": "3",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "7",
+        "location_id": "7",
+        "weekday": "4",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "7",
+        "location_id": "7",
+        "weekday": "5",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "7",
+        "location_id": "7",
+        "weekday": "6",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "7",
+        "location_id": "7",
+        "weekday": "7",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "organization_id": "3",
+    "name": "Marlin's Park",
+    "alternate_name": "Marlin's Park",
+    "description": "Must display COVID symptoms. You must make an appointment by calling 305-499-8767. The appointment line opens seven days a week at 9 am. The appointment line will remain open until all appointments for the next day have been filled.",
+    "transportation": "Car",
+    "updated": "2020-04-22",
+    "featured": "FALSE",
+    "physical_address": [
+      {
+        "id": "8",
+        "location_id": "8",
+        "address_1": "501 Marlins Way",
+        "city": "Miami",
+        "region": "NONE",
+        "state_province": "FL",
+        "postal_code": "33125",
+        "country": "US"
+      }
+    ],
+    "phones": [
+      {
+        "id": "8",
+        "location_id": "8",
+        "number": " +1 305-499-8767",
+        "extension": "None",
+        "type": "Appointment Line",
+        "language": "EN",
+        "description": "Hotline"
+      }
+    ],
+    "regular_schedule": []
+  },
+  {
+    "id": "9",
+    "organization_id": "3",
+    "name": "Miami-Dade County Youth Fairgrounds",
+    "alternate_name": "Miami-Dade County Youth Fairgrounds",
+    "description": "Must display COVID symptoms. You must make an appointment by calling 305-499-8767. The appointment line opens seven days a week at 9 am. The appointment line will remain open until all appointments for the next day have been filled.",
+    "transportation": "Car",
+    "updated": "2020-04-22",
+    "featured": "FALSE",
+    "physical_address": [
+      {
+        "id": "9",
+        "location_id": "9",
+        "address_1": "10901 Coral Way",
+        "city": "Miami",
+        "region": "NONE",
+        "state_province": "FL",
+        "postal_code": "33165",
+        "country": "US"
+      }
+    ],
+    "phones": [
+      {
+        "id": "9",
+        "location_id": "9",
+        "number": " +1 305-499-8767",
+        "extension": "None",
+        "type": "Appointment Line",
+        "language": "EN",
+        "description": "Appointment Line"
+      }
+    ],
+    "regular_schedule": [
+      {
+        "id": "9",
+        "location_id": "9",
+        "weekday": "1",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "9",
+        "location_id": "9",
+        "weekday": "2",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "9",
+        "location_id": "9",
+        "weekday": "3",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "9",
+        "location_id": "9",
+        "weekday": "4",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "9",
+        "location_id": "9",
+        "weekday": "5",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "9",
+        "location_id": "9",
+        "weekday": "6",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "9",
+        "location_id": "9",
+        "weekday": "7",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "organization_id": "3",
+    "name": "South Dade Government Center",
+    "alternate_name": "South Dade Government Center",
+    "description": "Must display COVID symptoms. You must make an appointment by calling 305-499-8767. The appointment line opens seven days a week at 9 am. The appointment line will remain open until all appointments for the next day have been filled.",
+    "transportation": "Car",
+    "updated": "2020-04-22",
+    "featured": "FALSE",
+    "physical_address": [
+      {
+        "id": "10",
+        "location_id": "10",
+        "address_1": "10710 SW 211th Street",
+        "city": "Cutler Bay",
+        "region": "NONE",
+        "state_province": "FL",
+        "postal_code": "33189",
+        "country": "US"
+      }
+    ],
+    "phones": [
+      {
+        "id": "10",
+        "location_id": "10",
+        "number": " +1 305-499-8767",
+        "extension": "None",
+        "type": "Appointment Line",
+        "language": "EN",
+        "description": "Appointment Line"
+      }
+    ],
+    "regular_schedule": [
+      {
+        "id": "10",
+        "location_id": "10",
+        "weekday": "1",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "10",
+        "location_id": "10",
+        "weekday": "2",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "10",
+        "location_id": "10",
+        "weekday": "3",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "10",
+        "location_id": "10",
+        "weekday": "4",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "10",
+        "location_id": "10",
+        "weekday": "5",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "10",
+        "location_id": "10",
+        "weekday": "6",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "10",
+        "location_id": "10",
+        "weekday": "7",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "organization_id": "3",
+    "name": "Amelia Earhart Park",
+    "alternate_name": "Amelia Earhart Park",
+    "description": "Must display COVID symptoms. You must make an appointment by calling 305-499-8767. The appointment line opens seven days a week at 9 am. The appointment line will remain open until all appointments for the next day have been filled.",
+    "transportation": "Car",
+    "updated": "2020-04-23",
+    "featured": "FALSE",
+    "physical_address": [
+      {
+        "id": "11",
+        "location_id": "11",
+        "address_1": "401 E. 65th Street",
+        "city": "Hialeah",
+        "region": "NONE",
+        "state_province": "FL",
+        "postal_code": "33013",
+        "country": "US"
+      }
+    ],
+    "phones": [
+      {
+        "id": "11",
+        "location_id": "11",
+        "number": " +1 305-499-8767",
+        "extension": "None",
+        "type": "Appointment Line",
+        "language": "EN",
+        "description": "Appointment Line"
+      }
+    ],
+    "regular_schedule": [
+      {
+        "id": "11",
+        "location_id": "11",
+        "weekday": "1",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "11",
+        "location_id": "11",
+        "weekday": "2",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "11",
+        "location_id": "11",
+        "weekday": "3",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "11",
+        "location_id": "11",
+        "weekday": "4",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "11",
+        "location_id": "11",
+        "weekday": "5",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      },
+      {
+        "id": "11",
+        "location_id": "11",
+        "weekday": "6",
+        "opens_at": "9:00 AM",
+        "closes_at": "5:00 PM"
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "organization_id": "3",
+    "name": "MedRight Urgent Care",
+    "alternate_name": "MedRight Urgent Care",
+    "description": "Must display COVID symptoms. You must make an appointment by calling 305-499-8767. The appointment line opens seven days a week at 9 am. The appointment line will remain open until all appointments for the next day have been filled.",
+    "transportation": "Car",
+    "updated": "2020-04-23",
+    "featured": "FALSE",
+    "physical_address": [
+      {
+        "id": "12",
+        "location_id": "12",
+        "address_1": "4621 Collins Avenue",
+        "city": "Miami Beach",
+        "region": "NONE",
+        "state_province": "FL",
+        "postal_code": "33140",
+        "country": "US"
+      }
+    ],
+    "phones": [
+      {
+        "id": "12",
+        "location_id": "12",
+        "number": " +1 305-499-8767",
+        "extension": "None",
+        "type": "Appointment Line",
+        "language": "EN",
+        "description": "Appointment Line"
+      }
+    ],
+    "regular_schedule": [
+      {
+        "id": "12",
+        "location_id": "12",
+        "weekday": "1",
+        "opens_at": "10:00 AM",
+        "closes_at": "6:00 PM"
+      },
+      {
+        "id": "12",
+        "location_id": "12",
+        "weekday": "2",
+        "opens_at": "10:00 AM",
+        "closes_at": "6:00 PM"
+      },
+      {
+        "id": "12",
+        "location_id": "12",
+        "weekday": "3",
+        "opens_at": "10:00 AM",
+        "closes_at": "6:00 PM"
+      },
+      {
+        "id": "12",
+        "location_id": "12",
+        "weekday": "4",
+        "opens_at": "10:00 AM",
+        "closes_at": "6:00 PM"
+      },
+      {
+        "id": "12",
+        "location_id": "12",
+        "weekday": "5",
+        "opens_at": "10:00 AM",
+        "closes_at": "6:00 PM"
+      },
+      {
+        "id": "12",
+        "location_id": "12",
+        "weekday": "7",
+        "opens_at": "10:00 AM",
+        "closes_at": "6:00 PM"
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "organization_id": "3",
+    "name": "Florida City",
+    "alternate_name": "Florida City",
+    "description": "Must display COVID symptoms. You must make an appointment by calling 305-499-8767. The appointment line opens seven days a week at 9 am. The appointment line will remain open until all appointments for the next day have been filled.",
+    "transportation": "Car",
+    "updated": "2020-04-23",
+    "featured": "FALSE",
+    "physical_address": [
+      {
+        "id": "13",
+        "location_id": "13",
+        "address_1": "450 W. Davis Parkway",
+        "city": "Florida City",
+        "region": "NONE",
+        "state_province": "FL",
+        "postal_code": "33034",
+        "country": "US"
+      }
+    ],
+    "phones": [
+      {
+        "id": "13",
+        "location_id": "13",
+        "number": " +1 305-499-8767",
+        "extension": "None",
+        "type": "Appointment Line",
+        "language": "EN",
+        "description": "Appointment Line"
+      }
+    ],
+    "regular_schedule": [
+      {
+        "id": "13",
+        "location_id": "13",
+        "weekday": "2",
+        "opens_at": "10:00 AM",
+        "closes_at": "1:00 PM"
+      },
+      {
+        "id": "13",
+        "location_id": "13",
+        "weekday": "4",
+        "opens_at": "10:00 AM",
+        "closes_at": "1:00 PM"
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "organization_id": "3",
+    "name": "Loren Roberts Park",
+    "alternate_name": "Loren Roberts Park",
+    "description": "Must display COVID symptoms. You must make an appointment by calling 305-499-8767. The appointment line opens seven days a week at 9 am. The appointment line will remain open until all appointments for the next day have been filled.",
+    "transportation": "Car",
+    "updated": "2020-04-23",
+    "featured": "FALSE",
+    "physical_address": [
+      {
+        "id": "14",
+        "location_id": "14",
+        "address_1": "627 NW 6th Avenue",
+        "city": "Florida City",
+        "region": "NONE",
+        "state_province": "FL",
+        "postal_code": "33034",
+        "country": "US"
+      }
+    ],
+    "phones": [
+      {
+        "id": "14",
+        "location_id": "14",
+        "number": " +1 305-499-8767",
+        "extension": "None",
+        "type": "Appointment Line",
+        "language": "EN",
+        "description": "Appointment Line"
+      }
+    ],
+    "regular_schedule": [
+      {
+        "id": "14",
+        "location_id": "14",
+        "weekday": "2",
+        "opens_at": "10:00 AM",
+        "closes_at": "1:00 PM"
+      },
+      {
+        "id": "14",
+        "location_id": "14",
+        "weekday": "4",
+        "opens_at": "10:00 AM",
+        "closes_at": "1:00 PM"
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "organization_id": "3",
+    "name": "Martin Luther King Jr./Clinica Campesina Health Center",
+    "alternate_name": "Martin Luther King Jr./Clinica Campesina Health Center",
+    "description": "Must display COVID symptoms. You must make an appointment by calling 305-499-8767. The appointment line opens seven days a week at 9 am. The appointment line will remain open until all appointments for the next day have been filled.",
+    "transportation": "Car",
+    "updated": "2020-04-26",
+    "featured": "FALSE",
+    "physical_address": [
+      {
+        "id": "15",
+        "location_id": "15",
+        "address_1": "810 W. Mowry Drive",
+        "city": "Homestead",
+        "region": "NONE",
+        "state_province": "FL",
+        "postal_code": "33030",
+        "country": "US"
+      }
+    ],
+    "phones": [
+      {
+        "id": "15",
+        "location_id": "15",
+        "number": " +1 305-499-8767",
+        "extension": "None",
+        "type": "Appointment Line",
+        "language": "EN",
+        "description": "Appointment Line"
+      }
+    ],
+    "regular_schedule": [
+      {
+        "id": "15",
+        "location_id": "15",
+        "weekday": "1",
+        "opens_at": "10:00 AM",
+        "closes_at": "1:00 PM"
+      },
+      {
+        "id": "15",
+        "location_id": "15",
+        "weekday": "3",
+        "opens_at": "10:00 AM",
+        "closes_at": "1:00 PM"
+      }
+    ]
+  }
+]
