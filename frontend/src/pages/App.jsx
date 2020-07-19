@@ -4,7 +4,7 @@ import Test2 from './Test2';
 import AuthForm from './AuthForm';
 import JobList from './Jobs/JobList';
 import FAQ from './FAQ';
-import { Nav, Footer } from '../components'
+import { Nav } from '../components'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import CreateJobs from './Jobs/CreateJob';
 
@@ -57,7 +57,6 @@ class App extends React.Component {
             <FAQ type="faq"/>
           </Route>
         </Switch>
-        <Footer />
       </Router>
     );
   }

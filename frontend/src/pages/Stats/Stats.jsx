@@ -1,144 +1,113 @@
 import React from 'react';
 import * as _ from 'lodash';
-import { LineChart, BarChart, PieChart } from '../../components'
-import { baseRequest } from '../../utils';
+import { LineChart, BarChart, PieChart, Spinner } from '../../components'
 import './Stats.css'
+import statsController from './statsController';
 
 export default class Stats extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      barData : [],
-      lineData : []
+      loading: true,
+      error: false,
+      filtering: false,
+      summary: {
+        confirmed: '',
+        deaths: '',
+        recovered: '',
+      },
+      dailyData: {},
+      stateData: [],
+      filteredStateData: [],
     };
   }
 
-  getLastNDays(nLastDays) {
-
-    const date = new Date();
-
-    let correspondingDates = [];
-    for (let i = 0; i < nLastDays; i++){
-      correspondingDates.push(date.getMonth() + '/' + date.getDate());
-      date.setDate(date.getDate() - 1);
-    }
-
-    return correspondingDates;
-  }
-
-  async getBarData () {
-    const getBarData = await baseRequest.get('/api/covid/usa-daily');
-    console.log('status', getBarData);
-
-    const range = 7;
-
-    // index 0 represents current day
-    let dailyNewCases = [];
-    for (let i = 0; i < range; i++){
-      dailyNewCases.push(getBarData[i].positiveIncrease);
-    }
-
-    this.setState({
-      barData:
-        {
-          data: {
-            labels: this.getLastNDays(range),
-            datasets: [
-              {
-                label: 'New Daily Cases',
-                backgroundColor: '#a6dcef',
-                data: dailyNewCases
-              }
-            ]
-          }
-        }
-    });
-  }
-
-  async getLineData() {
-    const getLineData = await baseRequest.get('/api/covid/usa-daily');
-    const range = 14;
-
-    let currentAdmitted = []
-    let currentRecoveries = []
-    for (let i = 0; i < range; i++){
-      currentAdmitted.push(getLineData[i].hospitalized);
-      currentRecoveries.push(getLineData[i].recovered);
-    }
-
-    currentAdmitted.reverse();
-    currentRecoveries.reverse();
-
-    this.setState({
-      lineData:
-        {
-          data: {
-            labels: this.getLastNDays(7),
-            datasets: [
-              {
-                label: 'Total admitted into care',
-                backgroundColor: '#f2aaaa',
-                data: currentAdmitted,
-              },
-              {
-                label: 'Total Recovered',
-                backgroundColor: '#a6dcef',
-                data: currentRecoveries
-              }
-            ]
-          }
-        }
-    });
-
-  }
-
   async componentDidMount() {
-    this.getBarData();
-    this.getLineData();
+    const { summary, stateData } = await statsController.getAllRequiredData();
+    if(_.isUndefined(summary)) {
+      this.setState({
+        loading: false,
+        error: true,
+      });
+      return;
+    }
+    this.setState({
+      summary,
+      stateData,
+      loading: false,
+      error: false,
+    });
+  }
+
+  filterStates = (event) => {
+    const inputText = event.target.value.toLowerCase();
+    if(_.isEmpty(inputText)) {
+      this.setState({
+        filtering: false,
+      });
+    }
+    const { stateData } = this.state;
+    const filterStatesByInput = stateData.filter(({ state }) => state.toLowerCase().includes(inputText));
+    this.setState({
+      filteredStateData: filterStatesByInput,
+      filtering: true,
+    });
   }
 
   render() {
-    const { barData } = this.state;
+    const {
+      summary: {
+        confirmed,
+        deaths,
+        recovered,
+      },
+      filtering,
+      filteredStateData,
+      stateData,
+      loading,
+      error,
+    } = this.state;
 
-    const pieChartData = {
-      data : {
-        labels: [
-        		'Red',
-        		'Blue',
-        		'Yellow'
-        	],
-        	datasets: [{
-        		data: [300, 50, 100],
-        		backgroundColor: [
-        		'#a6dcef',
-        		'#f2aaaa',
-        		'#e36387'
-        		],
-        		hoverBackgroundColor: [
-            '#a6dcef',
-          	'#f2aaaa',
-        		'#e36387'
-        		]
-        	}]
-      }
-    }
+    if(loading) return <Spinner />;
+    if(error) return 'Looks like we hit a snag loading statistics! Please try again.';
+    const stateSelector = filtering ? filteredStateData : stateData;
+
+    const {
+      usCases,
+      usDeaths,
+    } = statsController.getUSData(stateData);
 
     return (
       <div id='statsContainer'>
-        <span id='stats-title' class="badge badge-pill badge-primary mb-5">General Stats</span>
+        <h1>Statistics</h1>
         <div className='row'>
-          <div className='col-sm-12 shadow'>
-            <BarChart chartData={this.state.barData} />
+          <div className='card col'>
+            <div className='summary-stats card'>
+              <h1>World Wide</h1>
+              <h1>Total Confirmed Cases: { confirmed }</h1>
+              <h1>Total Deaths: { deaths }</h1>
+              <h1>Total Recoveries: { recovered }</h1>
+            </div>
+            <div className='us-summary-stats card'>
+              <h1>United States</h1>
+              <h1>Total Confirmed Cases: { usCases }</h1>
+              <h1>Total Deaths: { usDeaths }</h1>
+            </div>
           </div>
-          <div className='col-sm-6 shadow col-md-offset-2'>
-            <LineChart chartData={this.state.lineData} />
-          </div>
-          <div className='col-sm-6 shadow col-md-offset-2'>
-            <PieChart pieChartData={pieChartData} />
+          <div className='state-stats card col'>
+            <input onChange={ this.filterStates } placeholder='Filter by State'></input>
+            { stateSelector.map(({ state, total, death, recovered }) => {
+                return (
+                  <div key={state}>
+                    <p>{ state }</p>
+                    <p>Total Cases: { total } </p>
+                    <p>Total Deaths: { death } </p>
+                  </div>
+                );
+              }) }
           </div>
         </div>
       </div>
     );
-
   }
 }
