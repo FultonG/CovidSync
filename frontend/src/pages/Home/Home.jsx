@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './Home.css';
 import { useHistory } from "react-router-dom";
+import { News } from '../../components';
 
 const Home = () => {
 
@@ -58,6 +59,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <News />
       </div>
     );
 }
