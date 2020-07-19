@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import jobs from "../../utils/jobs";
-import {Form} from '../../components';
+import { Form } from "../../components";
 import { Button } from "../../components";
 import { useHistory } from "react-router-dom";
+import translate from "../../utils/translate";
+import LanguagesDropDown from "../../components/LanguageDropDown";
+import lodash from "lodash";
 
 const ListContainer = styled.div`
   display: flex;
@@ -15,6 +18,7 @@ const ListContainer = styled.div`
 const Card = styled.div`
   display: flex;
   width: 70%;
+  ${({ direction }) => `flex-direction: ${direction ? direction : "row"};`}
   border-radius: 10px;
   background-color: white;
   padding: 2%;
@@ -75,31 +79,89 @@ const ButtonContainer = styled.div`
   width: 70%;
 `;
 
-const JobList = () => {
+const JobList = (props) => {
   const history = useHistory();
   const [posts, setPosts] = useState([]);
   const [results, setResults] = useState([]);
   const [search, setSearch] = useState("");
+  const [languageFilter, setLanguageFilter] = useState({
+    code: "en",
+    name: "English",
+    nativeName: "English",
+  });
+  const fetchJobs = async () => {
+    const postList = await jobs.getAllJobs();
+    setPosts(postList);
+    setResults(postList);
+  };
   useEffect(() => {
-    const fetchJobs = async () => {
-      const postList = await jobs.getAllJobs();
-      setPosts(postList);
-      setResults(postList);
-    }
-
     fetchJobs();
-  }, [])
+  }, []);
 
   useEffect(() => {
-    setResults(posts.filter(post => post.title.toLowerCase().includes(search.toLowerCase())))
-  }, [search])
+    setResults(
+      posts.filter((post) =>
+        post.title.toLowerCase().includes(search.toLowerCase())
+      )
+    );
+  }, [search]);
+
+  useEffect(() => {
+    setResults(
+      posts.filter((post) =>
+        post.languages.some((lang) => lodash.isEqual(lang, languageFilter))
+      )
+    );
+  }, [languageFilter]);
+
+  useEffect(() => {
+    if (props.lang?.code === "en") {
+      fetchJobs();
+    } else {
+      Promise.all(
+        posts.map(async (entry) => {
+          let result = await translate.trans([
+            entry.length,
+            entry.employmentType,
+            entry.title,
+          ]);
+          result = result[0];
+          return {
+            ...entry,
+            length: result[0],
+            employmentType: result[1],
+            title: result[2],
+          };
+        })
+      ).then((data) => {
+        setResults(data);
+        setPosts(data);
+      });
+    }
+  }, [props.lang]);
   return (
     <ListContainer>
       <ButtonContainer>
-        <Button onClick={() => history.push('/jobs/create')}>Create Job Posting</Button>
+        <Button onClick={() => history.push("/jobs/create")}>
+          Create Job Posting
+        </Button>
       </ButtonContainer>
-      <Card>
-        <Form.Input placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value)}/>
+      <Card direction="column">
+        <h3>Filters</h3>
+        <Form.Input
+          placeholder="Search"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <LanguagesDropDown
+          width="30%"
+          labelColor="black"
+          label=""
+          padding="0"
+          value={languageFilter}
+          onSelect={setLanguageFilter}
+          displayValue="name"
+        />
       </Card>
       {results.map((job) => (
         <Card key={job.id}>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Form, Button } from "../../components";
 import auth from "../../utils/auth";
@@ -27,10 +27,6 @@ const SignUp = ({ setUser }) => {
   const handleInputChange = (value, attr) => {
     setValues((previous) => ({ ...previous, [attr]: value }));
   };
-
-  useEffect(() => {
-    console.log(values);
-  }, [values]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
