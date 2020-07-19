@@ -4,6 +4,7 @@ import LineChart from './LineChart';
 import BarChart from './BarChart';
 import PieChart from './PieChart'
 import Spinner from './Spinner';
+import News from './News';
 import * as Form from './Form';
 import ExpandingCard from './ExpandingCard';
 import LanguageDropDown from './LanguageDropDown';
@@ -17,5 +18,6 @@ export {
   Spinner,
   Form,
   ExpandingCard,
-  LanguageDropDown
+  LanguageDropDown,
+  News
 };
