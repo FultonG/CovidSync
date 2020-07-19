@@ -142,9 +142,7 @@ const JobList = (props) => {
   return (
     <ListContainer>
       <ButtonContainer>
-        <Button onClick={() => history.push("/jobs/create")}>
-          Create Job Posting
-        </Button>
+        <Button onClick={() => history.push('/jobs/create')}>Create Gig Posting</Button>
       </ButtonContainer>
       <Card direction="column">
         <h3>Filters</h3>
@@ -172,7 +170,7 @@ const JobList = (props) => {
             <p>Company: {job.company}</p>
           </div>
           <InformationContainer>
-            <h5>Job information</h5>
+            <h5>Gig information</h5>
             <p>Employment Type: {job.employmentType}</p>
             <p>Length: {job.length}</p>
             <p>Required Languages:</p>

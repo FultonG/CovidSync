@@ -1,6 +1,6 @@
 import React from 'react';
 import * as _ from 'lodash';
-import { LineChart, BarChart, PieChart, Spinner } from '../../components'
+import { LineChart, BarChart, PieChart, Spinner, Form } from '../../components'
 import './Stats.css'
 import statsController from './statsController';
 
@@ -138,7 +138,7 @@ export default class Stats extends React.Component {
             <BarChart chartData={ dailyIncrease }/>
           </div>
           <div className='state-stats col-12 mt-5'>
-            <input id='search' onChange={ this.filterStates } placeholder='Filter by State'></input>
+            <Form.Input id='search' onChange={ this.filterStates } placeholder='Filter by State'></Form.Input>
             <div className='table-responsive shadow'>
               <table className='table table-fixed'>
                 <thead>
