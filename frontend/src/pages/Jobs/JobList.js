@@ -5,7 +5,8 @@ import {Form} from '../../components';
 import { Button } from "../../components";
 import { useHistory } from "react-router-dom";
 import translate from '../../utils/translate';
-import {cloneDeep} from 'lodash';
+import LanguagesDropDown from '../../components/LanguageDropDown';
+import lodash from 'lodash';
 
 const ListContainer = styled.div`
   display: flex;
@@ -17,6 +18,7 @@ const ListContainer = styled.div`
 const Card = styled.div`
   display: flex;
   width: 70%;
+  ${({direction}) => `flex-direction: ${direction ? direction: 'row'};`}
   border-radius: 10px;
   background-color: white;
   padding: 2%;
@@ -82,6 +84,7 @@ const JobList = (props) => {
   const [posts, setPosts] = useState([]);
   const [results, setResults] = useState([]);
   const [search, setSearch] = useState("");
+  const [languageFilter, setLanguageFilter] = useState({"code":"en","name":"English","nativeName":"English"});
   useEffect(() => {
     const fetchJobs = async () => {
       const postList = await jobs.getAllJobs();
@@ -95,6 +98,10 @@ const JobList = (props) => {
   useEffect(() => {
     setResults(posts.filter(post => post.title.toLowerCase().includes(search.toLowerCase())))
   }, [search])
+
+  useEffect(() => {
+    setResults(posts.filter(post => post.languages.some(lang => lodash.isEqual(lang, languageFilter))));
+  }, [languageFilter])
 
   useEffect(() => {
     Promise.all(results.map(async entry => {
@@ -111,8 +118,10 @@ const JobList = (props) => {
       <ButtonContainer>
         <Button onClick={() => history.push('/jobs/create')}>Create Job Posting</Button>
       </ButtonContainer>
-      <Card>
+      <Card direction="column">
+        <h3>Filters</h3>
         <Form.Input placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value)}/>
+        <LanguagesDropDown width="30%" labelColor="black" label="" padding="0" value={languageFilter} onSelect={setLanguageFilter} displayValue="name"/>
       </Card>
       {results.map((job) => (
         <Card key={job.id}>
