@@ -35,9 +35,10 @@ class App extends React.Component {
     this.setState((previous) => ({ ...previous, user }));
   };
 
-  signOut = () => {
+  signOut = (history) => {
     localStorage.removeItem("user");
     this.setState((previous) => ({ ...previous, user: { isLoggedIn: false } }));
+    history.push('/');
   };
 
   handleLanguageChange = (value) => {

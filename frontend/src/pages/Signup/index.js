@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Form, Button } from "../../components";
 import auth from "../../utils/auth";
 import { Multiselect } from "multiselect-react-dropdown";
@@ -24,6 +24,8 @@ const InitialValues = {
 
 const SignUp = ({ setUser }) => {
   const [values, setValues] = useState(InitialValues);
+  const [error, setError] = useState('');
+  let history = useHistory();
   const handleInputChange = (value, attr) => {
     setValues((previous) => ({ ...previous, [attr]: value }));
   };
@@ -32,8 +34,9 @@ const SignUp = ({ setUser }) => {
     e.preventDefault();
     let response = await auth.createAccount(values);
     if (response.error) {
-      return console.log(response.error);
+      return setError(response.error);
     }
+    history.push('/login');
   };
   return (
     <Form.FormContainer>
@@ -89,6 +92,7 @@ const SignUp = ({ setUser }) => {
         <p>
           Already have an account? <Link to="/login">Log in</Link>
         </p>
+        {error.length > 0 && <p style={{color: 'red'}}>{error}</p>}
         <Form.ButtonContainer>
           <Button type="submit">Sign Up</Button>
         </Form.ButtonContainer>

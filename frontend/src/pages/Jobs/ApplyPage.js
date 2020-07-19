@@ -68,6 +68,8 @@ const ApplyPage = ({ user }) => {
     params: { id },
   } = useRouteMatch("/jobs/:id");
   let history = useHistory();
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
   const [job, setJob] = useState(null);
   const fetchJob = async (id) => {
     const data = await jobs.getJob(id);
@@ -79,10 +81,16 @@ const ApplyPage = ({ user }) => {
   }, [id]);
 
   const handleApply = async () => {
+    setSuccess("");
+    setError('');
     let userCopy = Object.assign({}, user);
     delete userCopy.token;
     delete userCopy.isLoggedIn;
-    const data = await jobs.apply({id, user: userCopy})
+    const response = await jobs.apply({id, user: userCopy})
+    if(response.error){
+      return setError('You have already applied to this position');
+    }
+    setSuccess("You have successfully applied to this position!");
   }
 
   return (
@@ -108,8 +116,10 @@ const ApplyPage = ({ user }) => {
             ))}
           </LanguageContainer>
           {user.isLoggedIn && user.accountType === "Personal" && (
-            <FlexContainer margin="20px 0px">
+            <FlexContainer margin="20px 0px" direction="column">
               <Button onClick={handleApply}>Easy Apply</Button>
+              {error.length > 0 && <p style={{color: 'red'}}>{error}</p>}
+              {success.length > 0 && <p style={{color: 'green'}}>{success}</p>}
             </FlexContainer>
           )}
 
