@@ -3,7 +3,7 @@
   margin: 5% 0;
 }
 
-.card {
+.home-card {
   font-family: Montserrat;
   margin: 0 auto;
   padding: 20px 0;
@@ -11,7 +11,7 @@
   z-index: 1;
 }
 
-.card:hover {
+.home-card:hover {
   transform: translateY(-10px);
 }
 
@@ -26,12 +26,7 @@
   font-weight: 500;
 }
 
-.fab {
-  font-size: 9rem;
-  color: #007FFF;
-}
-
-.fas {
+.home-icon {
   font-size: 9rem;
   color: #007FFF;
 }

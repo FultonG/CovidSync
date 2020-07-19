@@ -24,7 +24,7 @@ h5 {
 }
 
 .navbar {
-  padding: 20px 10% 30px 5%;
+  padding: 80px;
   background: rgb(36,146,218);
   background: linear-gradient(90deg, rgba(36,146,218,1) 0%, rgba(77,213,254,1) 77%);
 }
@@ -36,3 +36,11 @@ h5 {
   font-weight: 300;
   margin-right: 40px;
 }
+
+.brand {
+  font-size: 48px;
+}
+
+.nav-title {
+  font-family: Montserrat;
+};
