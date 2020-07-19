@@ -7,7 +7,7 @@ class Nav extends React.Component {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <Link className="navbar-brand" to="/">
-          Nav
+          <i class="fab fa-hubspot"></i>
         </Link>
         <button
           className="navbar-toggler"

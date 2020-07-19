@@ -5,6 +5,7 @@ import Signup from './Signup';
 import Login from './Login';
 import JobList from './Jobs/JobList';
 import FAQ from './FAQ';
+import Home from './Home';
 import { Nav } from '../components'
 import { baseRequest } from '../utils';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -45,6 +46,9 @@ class App extends React.Component {
       <Router>
         <Nav user={this.state.user} signOut={this.signOut}/>
         <Switch>
+          <Route path="/">
+            <Home />
+          </Route>
           <Route path="/test">
             <Test />
           </Route>
