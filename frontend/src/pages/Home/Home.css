@@ -6,7 +6,6 @@
 .card {
   font-family: Montserrat;
   margin: 0 auto;
-  width: 80%;
   padding: 20px 0;
   transition: .3s ease-out;
   z-index: 1;
