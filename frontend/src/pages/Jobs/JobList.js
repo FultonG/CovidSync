@@ -4,6 +4,8 @@ import jobs from "../../utils/jobs";
 import {Form} from '../../components';
 import { Button } from "../../components";
 import { useHistory } from "react-router-dom";
+import translate from '../../utils/translate';
+import {cloneDeep} from 'lodash';
 
 const ListContainer = styled.div`
   display: flex;
@@ -75,7 +77,7 @@ const ButtonContainer = styled.div`
   width: 70%;
 `;
 
-const JobList = () => {
+const JobList = (props) => {
   const history = useHistory();
   const [posts, setPosts] = useState([]);
   const [results, setResults] = useState([]);
@@ -93,6 +95,17 @@ const JobList = () => {
   useEffect(() => {
     setResults(posts.filter(post => post.title.toLowerCase().includes(search.toLowerCase())))
   }, [search])
+
+  useEffect(() => {
+    Promise.all(results.map(async entry => {
+      let result = await translate.trans([entry.length, entry.employmentType, entry.title]);
+      result = result[0]
+      return {...entry, length: result[0], employmentType: result[1], title: result[2] }
+    })).then(data => {
+      setResults(data);
+    })
+    
+  }, [props.lang])
   return (
     <ListContainer>
       <ButtonContainer>

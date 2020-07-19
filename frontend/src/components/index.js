@@ -6,6 +6,7 @@ import PieChart from './PieChart'
 import Spinner from './Spinner';
 import * as Form from './Form';
 import ExpandingCard from './ExpandingCard';
+import LanguageDropDown from './LanguageDropDown';
 
 export {
   Button,
@@ -16,4 +17,5 @@ export {
   Spinner,
   Form,
   ExpandingCard,
+  LanguageDropDown
 };

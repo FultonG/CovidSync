@@ -1,6 +1,7 @@
 import React from "react";
 import "./Nav.css";
 import { NavLink, Link } from "react-router-dom";
+import LanguageDropDown from '../LanguageDropDown';
 
 class Nav extends React.Component {
   render() {
@@ -53,6 +54,7 @@ class Nav extends React.Component {
               </li>
             )}
           </ul>
+            <LanguageDropDown value={this.props.lang} onSelect={this.props.changeLanguage}/>
         </div>
       </nav>
     );
