@@ -96,7 +96,7 @@ const JobList = () => {
   return (
     <ListContainer>
       <ButtonContainer>
-        <Button onClick={() => history.push('/jobs/create')}>Create Job Posting</Button>
+        <Button onClick={() => history.push('/jobs/create')}>Create Gig Posting</Button>
       </ButtonContainer>
       <Card>
         <Form.Input placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value)}/>
@@ -110,7 +110,7 @@ const JobList = () => {
             <p>Company: {job.company}</p>
           </div>
           <InformationContainer>
-            <h5>Job information</h5>
+            <h5>Gig information</h5>
             <p>Employment Type: {job.employmentType}</p>
             <p>Length: {job.length}</p>
             <p>Required Languages:</p>

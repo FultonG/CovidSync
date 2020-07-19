@@ -67,11 +67,11 @@ const menu = [
     link: "/stats",
   },
   {
-    label: "Test2",
-    link: "/test2",
+    label: "Testing Centers",
+    link: "/testingcenters",
   },
   {
-    label: "Jobs",
+    label: "Gigs",
     link: '/jobs'
   },
   {

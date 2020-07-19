@@ -1,0 +1,25 @@
+
+.testing-centers-container {
+  margin: 50px;
+}
+
+.search-component {
+  text-align: center;
+}
+
+.search-title {
+  text-align: left;
+  font-family: Montserrat;
+  color: #333;
+  padding: 20px;
+}
+
+.testing-center-search {
+  width: 100%;
+}
+
+.center-data {
+  text-align: left;
+  border: 1px solid #eee;
+  padding: 40px;
+}
