@@ -39,9 +39,6 @@ class App extends React.Component {
       <Router>
         <Nav user={this.state.user}/>
         <Switch>
-          <Route path="/">
-            <Home />
-          </Route>
           <Route path="/test">
             <Test />
           </Route>
@@ -62,6 +59,9 @@ class App extends React.Component {
             </Route>
           <Route path="/faq">
             <FAQ type="faq"/>
+          </Route>
+          <Route path="/">
+            <Home />
           </Route>
         </Switch>
       </Router>
