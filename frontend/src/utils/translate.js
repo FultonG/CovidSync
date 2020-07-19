@@ -20,9 +20,9 @@ let target = 'en';
 
 
 export default {
-  trans: (text, cb) => {
+  trans: (text) => {
     if(target == 'en') return text;
-    return translate.translate(text, target, cb);
+    return translate.translate(text, target);
   },
   setTarget: (code) => {
     target = code;
