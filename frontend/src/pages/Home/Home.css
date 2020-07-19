@@ -1,7 +1,6 @@
 
-
 #home-page-container {
-  margin: 5% 10%;
+  margin: 5% 0;
 }
 
 .card {
@@ -10,6 +9,7 @@
   width: 80%;
   padding: 20px 0;
   transition: .3s ease-out;
+  z-index: 1;
 }
 
 .card:hover {
@@ -29,8 +29,15 @@
 
 .fab {
   font-size: 9rem;
+  color: #007FFF;
 }
 
 .fas {
   font-size: 9rem;
+  color: #007FFF;
+}
+
+#vector {
+  position: fixed;
+  bottom: 0;
 }
