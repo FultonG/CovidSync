@@ -7,7 +7,9 @@ class Nav extends React.Component {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <Link className="navbar-brand" to="/">
-          Nav
+          <i class="brand fab fa-hubspot">
+          <span className='nav-title'>   CovidSync</span>
+          </i>
         </Link>
         <button
           className="navbar-toggler"

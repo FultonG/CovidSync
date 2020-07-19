@@ -5,6 +5,7 @@ import Signup from './Signup';
 import Login from './Login';
 import JobList from './Jobs/JobList';
 import FAQ from './FAQ';
+import Home from './Home';
 import { Nav } from '../components'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import CreateJobs from './Jobs/CreateJob';
@@ -62,6 +63,9 @@ class App extends React.Component {
             </Route>
           <Route path="/faq">
             <FAQ type="faq"/>
+          </Route>
+          <Route path="/">
+            <Home />
           </Route>
         </Switch>
       </Router>
