@@ -9,14 +9,16 @@ import Home from './Home';
 import { Nav } from '../components'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import CreateJobs from './Jobs/CreateJob';
+import translate from '../utils/translate';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       user: {
-        isLoggedIn: false
-      }
+        isLoggedIn: false,
+      },
+      currentLang: {"code":"en","name":"English","nativeName":"English"}
     }
   }
 
@@ -33,15 +35,19 @@ class App extends React.Component {
   }
 
   signOut = () => {
-    console.log('click')
     localStorage.removeItem('user');
     this.setState(previous => ({...previous, user: {isLoggedIn: false}}))
+  }
+
+  handleLanguageChange = (value) => {
+    translate.setTarget(value.code)
+    this.setState(prev => ({...prev, currentLang: value}))
   }
 
   render() {
     return (
       <Router>
-        <Nav user={this.state.user} signOut={this.signOut}/>
+        <Nav user={this.state.user} signOut={this.signOut} lang={this.state.currentLang} changeLanguage={this.handleLanguageChange}/>
         <Switch>
           <Route path="/stats">
             <Test />
@@ -56,7 +62,7 @@ class App extends React.Component {
             <Signup/>
           </Route>
           <Route exact path="/jobs">
-            <JobList/>
+            <JobList lang={this.state.currentLang}/>
           </Route>
           <Route exact path="/jobs/create">
             <CreateJobs user={this.state.user}/>
