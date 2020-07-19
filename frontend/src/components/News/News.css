@@ -1,0 +1,28 @@
+
+.card {
+  z-index: 1;
+  margin: 0 auto;
+}
+
+#news-root {
+  margin: 0 19%;
+}
+
+.far {
+  font-size: 8rem;
+  z-index: 1;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 8%;
+  color: #888888;
+}
+
+h5 {
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+.p {
+  font-size: .5rem !important;
+  padding: 0 0;
+}

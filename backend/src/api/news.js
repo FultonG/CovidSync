@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     const { data } = await axios.get(baseRequest, {
       params: {
         q: 'coronavirus',
-        country: 'us',
+        country: 'United States',
         category: 'science',
         apiKey: process.env.NEWS_API_KEY,
       },
