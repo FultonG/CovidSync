@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import jobs from "../../utils/jobs";
-
+import {Form} from '../../components';
 import { Button } from "../../components";
 import { useHistory } from "react-router-dom";
 
@@ -78,21 +78,30 @@ const ButtonContainer = styled.div`
 const JobList = () => {
   const history = useHistory();
   const [posts, setPosts] = useState([]);
-
+  const [results, setResults] = useState([]);
+  const [search, setSearch] = useState("");
   useEffect(() => {
     const fetchJobs = async () => {
       const postList = await jobs.getAllJobs();
       setPosts(postList);
+      setResults(postList);
     }
 
     fetchJobs();
   }, [])
+
+  useEffect(() => {
+    setResults(posts.filter(post => post.title.toLowerCase().includes(search.toLowerCase())))
+  }, [search])
   return (
     <ListContainer>
       <ButtonContainer>
         <Button onClick={() => history.push('/jobs/create')}>Create Job Posting</Button>
       </ButtonContainer>
-      {posts.map((job) => (
+      <Card>
+        <Form.Input placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value)}/>
+      </Card>
+      {results.map((job) => (
         <Card key={job.id}>
           <Image src={job.image} />
           <div>
