@@ -25,6 +25,7 @@ export default class Stats extends React.Component {
 
   async componentDidMount() {
     const { summary, stateData, positiveVsDeaths, dailyIncrease } = await statsController.getAllRequiredData();
+    console.log(summary, stateData, positiveVsDeaths, dailyIncrease);
     if(_.isUndefined(summary)) {
       this.setState({
         loading: false,

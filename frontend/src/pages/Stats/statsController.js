@@ -128,17 +128,28 @@ async function getStateData() {
   });
 }
 
-async function getAllRequiredData() {
-  const {
-    data: {
-      confirmed,
-      deaths,
-      recovered,
-    }
-  } = await baseRequest.get('/api/covid/total');
+async function getWorldWideData() {
+  return await baseRequest.get('/api/covid/total');
+}
 
-  const chartData = await getChartData();
-  const stateData = await getStateData();
+async function getAllRequiredData() {
+  const [
+    {
+      data: {
+        confirmed,
+        deaths,
+        recovered,
+      },
+    },
+    chartData,
+    stateData
+  ] = await Promise.all(
+    [
+      getWorldWideData(),
+      getChartData(),
+      getStateData(),
+    ]
+  );
 
   return {
     summary: {
