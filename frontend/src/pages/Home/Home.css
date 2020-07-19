@@ -1,4 +1,5 @@
 
+
 #home-page-container {
   margin: 5% 10%;
 }
@@ -18,6 +19,12 @@
 .card-title {
   font-size: 1.5rem;
   margin-top: 10px 0;
+  font-weight: 600;
+  color: #393737;
+}
+
+.card-text {
+  font-weight: 500;
 }
 
 .fab {

@@ -13,7 +13,7 @@ class Home extends React.Component{
       <div id='home-page-container'>
         <div class="row row-cols-1 row-cols-md-2 text-center">
           <div class="col mb-5">
-            <div class="card shadow">
+            <div class="card shadow left-card">
               <i class="fas fa-money-bill-wave"></i>
               <div class="card-body">
                 <h5 class="card-title">Gigs</h5>
@@ -22,7 +22,7 @@ class Home extends React.Component{
             </div>
           </div>
           <div class="col mb-5">
-            <div class="card shadow">
+            <div class="card shadow right-card">
               <i class="fas fa-chart-pie"></i>
               <div class="card-body">
                 <h5 class="card-title">COVID-19 Statistics</h5>
