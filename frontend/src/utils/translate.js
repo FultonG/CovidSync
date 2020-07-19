@@ -21,7 +21,6 @@ let target = 'en';
 
 export default {
   trans: (text) => {
-    if(target == 'en') return text;
     return translate.translate(text, target);
   },
   setTarget: (code) => {
