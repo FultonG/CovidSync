@@ -10,20 +10,21 @@ export default class Stats extends React.Component {
     this.state = {
       loading: true,
       error: false,
-      filtering: false,
       summary: {
         confirmed: '',
         deaths: '',
         recovered: '',
       },
-      dailyData: {},
       stateData: [],
       filteredStateData: [],
+      filtering: false,
+      positiveVsDeaths: {},
+      dailyIncrease: {},
     };
   }
 
   async componentDidMount() {
-    const { summary, stateData } = await statsController.getAllRequiredData();
+    const { summary, stateData, positiveVsDeaths, dailyIncrease } = await statsController.getAllRequiredData();
     if(_.isUndefined(summary)) {
       this.setState({
         loading: false,
@@ -34,6 +35,8 @@ export default class Stats extends React.Component {
     this.setState({
       summary,
       stateData,
+      positiveVsDeaths,
+      dailyIncrease,
       loading: false,
       error: false,
     });
@@ -47,7 +50,7 @@ export default class Stats extends React.Component {
       });
     }
     const { stateData } = this.state;
-    const filterStatesByInput = stateData.filter(({ state }) => state.toLowerCase().includes(inputText));
+    const filterStatesByInput = stateData.filter(({ state }) => _.startsWith(state.toLowerCase(), (inputText)));
     this.setState({
       filteredStateData: filterStatesByInput,
       filtering: true,
@@ -64,6 +67,8 @@ export default class Stats extends React.Component {
       filtering,
       filteredStateData,
       stateData,
+      positiveVsDeaths,
+      dailyIncrease,
       loading,
       error,
     } = this.state;
@@ -79,9 +84,9 @@ export default class Stats extends React.Component {
 
     return (
       <div id='statsContainer'>
-        <h1>Statistics</h1>
+        <h1 className='stats-title'>Statistics</h1>
         <div className='row'>
-          <div className='card col'>
+          <div className='card col-6'>
             <div className='summary-stats card'>
               <h1>World Wide</h1>
               <h1>Total Confirmed Cases: { confirmed }</h1>
@@ -94,17 +99,36 @@ export default class Stats extends React.Component {
               <h1>Total Deaths: { usDeaths }</h1>
             </div>
           </div>
-          <div className='state-stats card col'>
+          <div className='state-stats card col-6'>
             <input onChange={ this.filterStates } placeholder='Filter by State'></input>
-            { stateSelector.map(({ state, total, death, recovered }) => {
-                return (
-                  <div key={state}>
-                    <p>{ state }</p>
-                    <p>Total Cases: { total } </p>
-                    <p>Total Deaths: { death } </p>
-                  </div>
-                );
-              }) }
+            <div className='table-responsive'>
+              <table className='table table-fixed'>
+                <thead>
+                  <tr>
+                    <th scope="col">State</th>
+                    <th scope="col">Total Cases</th>
+                    <th scope="col">Total Deaths</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  { stateSelector.map(({ state, total, death, recovered }) => {
+                    return (
+                      <tr className='state-field' key={state}>
+                        <td>{ state }</td>
+                        <td>{ total }</td>
+                        <td>{ death }</td>
+                      </tr>
+                    );
+                    }) }
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div className='charts card col-6'>
+            <LineChart chartData={ positiveVsDeaths }/>
+          </div>
+          <div className='charts card col-6'>
+            <BarChart chartData={ dailyIncrease }/>
           </div>
         </div>
       </div>

@@ -60,6 +60,74 @@ const stateCodeToNameMap = {
   'WY': 'Wyoming',
 };
 
+const dayRange = 60;
+
+function getDateLabels(n) {
+  const today = new Date();
+  return _.range(n).map((i) => {
+    today.setDate(today.getDate() - 1);
+    const label = `${today.getMonth()}/${today.getDate()}`;
+    return label;
+  });
+}
+
+async function getChartData() {
+  const dailyData = await baseRequest.get('/api/covid/usa-daily');
+  const requiredDays = _.slice(dailyData, 0, dayRange);
+  const dateLabels = getDateLabels(dayRange).reverse();
+
+  const positive = requiredDays.map((day) => day.positive).reverse();
+  const deaths = requiredDays.map((day) => day.death).reverse();
+  const newDailyCases = requiredDays.map((day) => day.positiveIncrease).reverse();
+
+  return {
+    positiveVsDeaths: {
+      data: {
+        labels: dateLabels,
+        datasets: [
+          {
+            label: 'Total Confirmed Cases',	
+            backgroundColor: '#f2aaaa',	
+            data: positive,
+          },
+          {
+            label: 'Total Deaths',	
+            backgroundColor: '#000',
+            data: deaths,
+          },
+        ],
+      },
+    },
+    dailyIncrease: {
+      data: {
+        labels: dateLabels,
+        datasets: [
+          {
+            label: 'New Daily Cases',
+            backgroundColor: '#a6dcef',
+            data: newDailyCases,
+          },
+        ],  
+      },
+    },
+  };
+}
+
+async function getStateData() {
+  const stateData = await baseRequest.get('/api/covid/usa-states'); 
+  return stateData.map(({
+    state,
+    positive,
+    death,
+  }) => {
+    return {
+      state: stateCodeToNameMap[state],
+      total: positive.toLocaleString(),
+      death: death.toLocaleString(),
+    };
+  });
+}
+
 async function getAllRequiredData() {
   const {
     data: {
@@ -69,21 +137,8 @@ async function getAllRequiredData() {
     }
   } = await baseRequest.get('/api/covid/total');
 
-  const dailyData = await baseRequest.get('/api/covid/usa-daily');
-  const stateData = await baseRequest.get('/api/covid/usa-states');
-
-  const requiredStateData = stateData.map(({
-    state,
-    positive,
-    death,
-  }) => {
-    console.log(recovered);
-    return {
-      state: stateCodeToNameMap[state],
-      total: positive.toLocaleString(),
-      death: death.toLocaleString(),
-    };
-  });
+  const chartData = await getChartData();
+  const stateData = await getStateData();
 
   return {
     summary: {
@@ -91,7 +146,8 @@ async function getAllRequiredData() {
       deaths: deaths.toLocaleString(),
       recovered: recovered.toLocaleString(),
     },
-    stateData: requiredStateData,
+    stateData,
+    ...chartData,
   };
 }
 

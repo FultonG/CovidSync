@@ -1,8 +1,18 @@
 
 #statsContainer {
-  margin: 8% 16%;
+  margin: 50px;
 }
 
-#stats-title {
-
+.stats-title {
+  text-align: center;
+  color: #444;
+  margin: 40px;
 }
+
+.state-stats {
+  max-height: 400px;
+}
+
+.state-field {
+  border: 1px solid #eee;
+} 
