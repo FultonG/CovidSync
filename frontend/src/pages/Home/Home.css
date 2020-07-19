@@ -4,19 +4,20 @@
 }
 
 .card {
+  font-family: Montserrat;
   margin: 0 auto;
   width: 80%;
   padding: 20px 0;
-  transition: .3s ease-in all;
+  transition: .3s ease-out;
 }
 
 .card:hover {
   transform: translateY(-10px);
-
 }
 
 .card-title {
   font-size: 1.5rem;
+  margin-top: 10px 0;
 }
 
 .fab {
