@@ -11,7 +11,7 @@ router.get('/zipcode/:zip', async (req, res) => {
         key: process.env.LOCATION_API_KEY,
         inFormat: 'kvp',
         outFormat: 'json',
-        location: zip + ', US',
+        location: `${zip}, US`,
         thumbMaps: false,
       },
     });

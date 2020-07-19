@@ -1,6 +1,7 @@
 import React from 'react';
 import * as _ from 'lodash';
 import tcController from './testingCentersController';
+import { Form } from '../../components'
 import { KEY } from '../../utils/MAP_KEYS.json';
 import ReactMapGL, { Marker } from 'react-map-gl';
 import './TestingCenters.css';
@@ -57,7 +58,7 @@ export default class TestingCenters extends React.Component {
       <div className='testing-centers-container row'>
         <div className='search-component col-4'>
           <h1 className='search-title'>Search For Testing Centers</h1>
-          <input onChange={this.filterLocations} pattern='[0-9]+' className='testing-center-search' type="text" placeholder='Search by ZIP Code'/>
+          <Form.Input onChange={this.filterLocations} pattern='[0-9]+' className='testing-center-search' type="text" placeholder='Search by ZIP Code'/>
           <div className='centers'>
             { filtering && filteredCenters.map(({
               name,
