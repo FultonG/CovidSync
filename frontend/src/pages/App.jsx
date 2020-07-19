@@ -1,7 +1,8 @@
 import React from 'react';
 import Test from './Test';
 import Test2 from './Test2';
-import AuthForm from './AuthForm';
+import Signup from './Signup';
+import Login from './Login';
 import JobList from './Jobs/JobList';
 import FAQ from './FAQ';
 import { Nav } from '../components'
@@ -33,10 +34,16 @@ class App extends React.Component {
     this.setState(previous => ({...previous, user}))
   }
 
+  signOut = () => {
+    console.log('click')
+    localStorage.removeItem('user');
+    this.setState(previous => ({...previous, user: {isLoggedIn: false}}))
+  }
+
   render() {
     return (
       <Router>
-        <Nav user={this.state.user}/>
+        <Nav user={this.state.user} signOut={this.signOut}/>
         <Switch>
           <Route path="/test">
             <Test />
@@ -45,16 +52,16 @@ class App extends React.Component {
             <Test2 />
           </Route>
           <Route path="/login">
-            <AuthForm type="login" setUser={this.setUser}/>
+            <Login setUser={this.setUser}/>
           </Route>
           <Route path="/signup">
-            <AuthForm type="signup"/>
+            <Signup/>
           </Route>
           <Route exact path="/jobs">
             <JobList/>
           </Route>
           <Route exact path="/jobs/create">
-            <CreateJobs/>
+            <CreateJobs user={this.state.user}/>
             </Route>
           <Route path="/faq">
             <FAQ type="faq"/>
